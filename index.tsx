@@ -631,7 +631,7 @@ const App: React.FC = () => {
   );
 
   return (
-    <div className={`app-container lang-${language.toLowerCase()}`}>
+    <div className={`app-container lang-${language.toLowerCase()} view-${view}`}>
       <header className="header">
         <div className="header-left">
           {/* Home button moved to sub-header for detail/search views */}

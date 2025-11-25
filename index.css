@@ -726,10 +726,14 @@ input:checked + .slider:before {
     height: 48px;
   }
 
-.scroll-to-top-btn svg {
-    width: 24px;
-    height: 24px;
+  .view-detail .scroll-to-top-btn {
+    bottom: 88px;
   }
+
+  .scroll-to-top-btn svg {
+    width: 24px;
+  }
+
 }
 
 /* Bottom Island Navigation Bar */
