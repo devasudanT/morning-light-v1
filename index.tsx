@@ -284,10 +284,10 @@ const App: React.FC = () => {
       const promises = manifest.flatMap(item => [
         fetch(`https://res.cloudinary.com/devasudan/raw/upload/v1764103222/morning-light/${formatDateForFilename(parseDateFromInput(item.date))}-EN.json`)
           .then(res => res.ok ? res.json() : [])
-          .then(data => ({ key: `${item.date}-EN`, data })),
+          .then(data => ({ key: `${formatDateForFilename(parseDateFromInput(item.date))}-EN`, data })),
         fetch(`https://res.cloudinary.com/devasudan/raw/upload/v1764103222/morning-light/${formatDateForFilename(parseDateFromInput(item.date))}-TA.json`)
           .then(res => res.ok ? res.json() : [])
-          .then(data => ({ key: `${item.date}-TA`, data }))
+          .then(data => ({ key: `${formatDateForFilename(parseDateFromInput(item.date))}-TA`, data }))
       ]);
 
       try {
@@ -313,6 +313,13 @@ const App: React.FC = () => {
     setError(null);
     setDevotion(null);
 
+    const key = `${formatDateForFilename(date)}-${lang}`;
+    if (allDevotions[key]) {
+      setDevotion(allDevotions[key]);
+      setIsLoading(false);
+      return;
+    }
+
     const filename = `${formatDateForFilename(date)}-${lang}.json`;
     try {
       const response = await fetch(`https://res.cloudinary.com/devasudan/raw/upload/v1764103222/morning-light/${filename}`);
@@ -332,7 +339,7 @@ const App: React.FC = () => {
     } finally {
       setIsLoading(false);
     }
-  }, []);
+  }, [allDevotions]);
   
   // Fetch devotion content when in detail view
   useEffect(() => {
@@ -439,8 +446,8 @@ const App: React.FC = () => {
       if (addedDates.has(manifestInfo.date)) continue;
 
       const devotionsToCheck = [
-        allDevotions[`${manifestInfo.date}-EN`],
-        allDevotions[`${manifestInfo.date}-TA`]
+        allDevotions[`${formatDateForFilename(parseDateFromInput(manifestInfo.date))}-EN`],
+        allDevotions[`${formatDateForFilename(parseDateFromInput(manifestInfo.date))}-TA`]
       ].filter(Boolean);
       
       let matchFound = false;
