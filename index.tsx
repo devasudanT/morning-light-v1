@@ -530,6 +530,15 @@ const App: React.FC = () => {
               <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
             </svg>
           </button>
+          <button onClick={handleGoBackToList} className="icon-btn sub-header-home-btn" aria-label="Go to Home">
+            <HomeIcon />
+          </button>
+          <button className="icon-btn" aria-label="Search" onClick={() => setIsSearchVisible(true)}>
+            <SearchIcon />
+          </button>
+          <button className="icon-btn" aria-label="Select Morning Light" onClick={handleCalendarClick}>
+            <ListIcon />
+          </button>
           {meta?.youtubeUrl && meta.youtubeUrl !== '#' && (
             <a href={meta.youtubeUrl} target="_blank" rel="noopener noreferrer" className="youtube-link" aria-label="YouTube Content">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
@@ -674,7 +683,7 @@ const App: React.FC = () => {
                 <span className={language === 'TA' ? 'active-lang' : ''}>TA</span>
               </div>
 
-              {(view === 'detail' || view === 'search') && (
+              {view === 'search' && (
                 <button onClick={handleGoBackToList} className="icon-btn sub-header-home-btn" aria-label="Go to Home">
                   <HomeIcon />
                 </button>
@@ -687,16 +696,6 @@ const App: React.FC = () => {
                   <SearchIcon />
                   <span>Search...</span>
                 </button>
-              )}
-              {view === 'detail' && (
-                <>
-                  <button className="icon-btn" aria-label="Select Morning Light" onClick={handleCalendarClick}>
-                    <ListIcon />
-                  </button>
-                  <button className="icon-btn" aria-label="Search" onClick={() => setIsSearchVisible(true)}>
-                    <SearchIcon />
-                  </button>
-                </>
               )}
             </div>
 
