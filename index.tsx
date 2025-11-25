@@ -191,7 +191,7 @@ const App: React.FC = () => {
       setIsLoading(true);
       setError(null);
       try {
-        const response = await fetch('https://morninglightdata.web.app/data/manifest.json');
+        const response = await fetch('https://res.cloudinary.com/devasudan/raw/upload/v1764103222/morning-light/manifest.json');
         if (!response.ok) throw new Error('Could not load devotion list.');
         const data: ManifestEntry[] = await response.json();
         setManifest(data);
@@ -210,10 +210,10 @@ const App: React.FC = () => {
       if (manifest.length === 0) return;
 
       const promises = manifest.flatMap(item => [
-        fetch(`https://morninglightdata.web.app/data/${formatDateForFilename(parseDateFromInput(item.date))}-EN.json`)
+        fetch(`https://res.cloudinary.com/devasudan/raw/upload/v1764103222/morning-light/${formatDateForFilename(parseDateFromInput(item.date))}-EN.json`)
           .then(res => res.ok ? res.json() : [])
           .then(data => ({ key: `${item.date}-EN`, data })),
-        fetch(`https://morninglightdata.web.app/data/${formatDateForFilename(parseDateFromInput(item.date))}-TA.json`)
+        fetch(`https://res.cloudinary.com/devasudan/raw/upload/v1764103222/morning-light/${formatDateForFilename(parseDateFromInput(item.date))}-TA.json`)
           .then(res => res.ok ? res.json() : [])
           .then(data => ({ key: `${item.date}-TA`, data }))
       ]);
@@ -243,7 +243,7 @@ const App: React.FC = () => {
 
     const filename = `${formatDateForFilename(date)}-${lang}.json`;
     try {
-      const response = await fetch(`https://morninglightdata.web.app/data/${filename}`);
+      const response = await fetch(`https://res.cloudinary.com/devasudan/raw/upload/v1764103222/morning-light/${filename}`);
       if (!response.ok) {
         throw new Error('Morning Light not available for this date.');
       }
