@@ -181,6 +181,40 @@ const App: React.FC = () => {
   const [showScrollToTop, setShowScrollToTop] = useState(false);
   const [showMorningLightList, setShowMorningLightList] = useState(false);
 
+  // Function to parse URL pathname into date and language
+  const parsePathname = (pathname: string): { date: Date | null; language: Language | null } => {
+    if (pathname === '/' || pathname === '' || pathname === '/index.html') return { date: null, language: null };
+
+    // Remove leading slash and split by dashes
+    const slug = pathname.startsWith('/') ? pathname.slice(1) : pathname;
+    const parts = slug.split('-');
+    if (parts.length < 4) return { date: null, language: null };
+
+    // Expected format: dd-MM-yyyy-LANG
+    const day = parseInt(parts[0], 10);
+    const month = parseInt(parts[1], 10) - 1; // JS months are 0-based
+    const year = parseInt(parts[2], 10);
+    const langPart = parts[3].toUpperCase();
+
+    const date = new Date(year, month, day);
+    if (isNaN(date.getTime())) return { date: null, language: null };
+
+    const language: Language | null = (langPart === 'EN' || langPart === 'TA') ? langPart : null;
+    return { date, language };
+  };
+
+  // Function to create path from date and language using JSON filename format
+  const createPath = (date: Date, language: Language): string => {
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const year = date.getFullYear();
+    return `/${day}-${month}-${year}-${language}`;
+  };
+
+  // Function to navigate with History API
+  const navigateTo = (path: string) => {
+    window.history.pushState(null, '', path);
+  };
 
   const dateInputRef = useRef<HTMLInputElement>(null);
   const searchInputRef = useRef<HTMLInputElement>(null);
@@ -203,6 +237,44 @@ const App: React.FC = () => {
     };
     fetchManifest();
   }, []);
+
+  // Initialize from URL pathname on app load
+  useEffect(() => {
+    const { date, language: pathnameLang } = parsePathname(window.location.pathname);
+    if (date) {
+      setCurrentDate(date);
+      setView('detail');
+      if (pathnameLang) setLanguage(pathnameLang);
+    }
+  }, []);
+
+  // Add popstate listener for browser navigation (back/forward buttons)
+  useEffect(() => {
+    const handlePopState = () => {
+      const { date, language: pathnameLang } = parsePathname(window.location.pathname);
+      if (date) {
+        setCurrentDate(date);
+        setView('detail');
+        if (pathnameLang) setLanguage(pathnameLang);
+      } else {
+        // If no devotion path, go back to list view
+        setView('list');
+      }
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
+  // Update URL pathname when in detail view and date/language changes
+  useEffect(() => {
+    if (view === 'detail') {
+      navigateTo(createPath(currentDate, language));
+    } else if (view === 'list' && window.location.pathname !== '/') {
+      // Navigate back to home when going to list view
+      navigateTo('/');
+    }
+  }, [currentDate, language, view]);
 
   // Pre-fetch all devotion content for searching after manifest is loaded
   useEffect(() => {
@@ -479,7 +551,7 @@ const App: React.FC = () => {
       behavior: 'smooth'
     });
   };
-  
+
   const getHighlightedText = (text: string, highlight: string) => {
     if (!highlight.trim() || !text) {
       return text;
