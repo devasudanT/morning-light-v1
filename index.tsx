@@ -49,12 +49,12 @@ const parseDateFromInput = (dateStr: string): Date => {
 
 const HomeIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
   </svg>
 );
 
 const SunIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" width="16" height="16" x="0" y="0" viewBox="0 0 302.4 302.4" style={{enableBackground: 'new 0 0 512 512'}} xmlSpace="preserve" className="">
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" width="16" height="16" x="0" y="0" viewBox="0 0 302.4 302.4" style={{ enableBackground: 'new 0 0 512 512' }} xmlSpace="preserve" className="">
     <g>
       <path d="M204.8 97.6C191.2 84 172 75.2 151.2 75.2s-40 8.4-53.6 22.4c-13.6 13.6-22.4 32.8-22.4 53.6s8.8 40 22.4 53.6c13.6 13.6 32.8 22.4 53.6 22.4s40-8.4 53.6-22.4c13.6-13.6 22.4-32.8 22.4-53.6s-8.4-40-22.4-53.6zM151.2 51.6c5.6 0 10.4-4.8 10.4-10.4V10.4c0-5.6-4.8-10.4-10.4-10.4-5.6 0-10.4 4.8-10.4 10.4v30.8c0 5.6 4.8 10.4 10.4 10.4zM236.4 80.8l22-22c4-4 4-10.4 0-14.4s-10.4-4-14.4 0l-22 22c-4 4-4 10.4 0 14.4 3.6 4 10 4 14.4 0zM292 140.8h-30.8c-5.6 0-10.4 4.8-10.4 10.4 0 5.6 4.8 10.4 10.4 10.4H292c5.6 0 10.4-4.8 10.4-10.4 0-5.6-4.8-10.4-10.4-10.4zM236 221.6c-4-4-10.4-4-14.4 0s-4 10.4 0 14.4l22 22c4 4 10.4 4 14.4 0s4-10.4 0-14.4l-22-22zM151.2 250.8c-5.6 0-10.4 4.8-10.4 10.4V292c0 5.6 4.8 10.4 10.4 10.4 5.6 0 10.4-4.8 10.4-10.4v-30.8c0-5.6-4.8-10.4-10.4-10.4zM66 221.6l-22 22c-4 4-4 10.4 0 14.4s10.4 4 14.4 0l22-22c4-4 4-10.4 0-14.4-3.6-4-10-4-14.4 0zM51.6 151.2c0-5.6-4.8-10.4-10.4-10.4H10.4c-5.6 0-10.4 4.8-10.4 10.4s4.8 10.4 10.4 10.4h30.8c5.6 0 10.4-4.8 10.4-10.4zM66 80.8c4 4 10.4 4 14.4 0s4-10.4 0-14.4l-22-22c-4-4-10.4-4-14.4 0s-4 10.4 0 14.4l22 22z" fill="currentColor" opacity="1" data-original="#000000" className=""></path>
     </g>
@@ -63,49 +63,49 @@ const SunIcon = () => (
 
 const MoonIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
-    <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-3.31 0-6-2.69-6-6 0-1.82.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/>
+    <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-3.31 0-6-2.69-6-6 0-1.82.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z" />
   </svg>
 );
 
 const SearchIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" /></svg>
 );
 
 const ListIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="currentColor">
-        <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/>
-    </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="currentColor">
+    <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z" />
+  </svg>
 );
 
 const NotAvailableIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 0 24 24" width="48px" fill="currentColor">
-        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11H7v-2h10v2z"/>
-    </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 0 24 24" width="48px" fill="currentColor">
+    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11H7v-2h10v2z" />
+  </svg>
 );
 
 const LogoIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" width="40" height="40" x="0" y="0" viewBox="0 0 64 64" style={{enableBackground: 'new 0 0 512 512'}} xmlSpace="preserve" className="">
-        <g>
-            <radialGradient id="logo-a" cx="21.56" cy="21.67" r="28.61" gradientUnits="userSpaceOnUse">
-                <stop offset="0" stopColor="#feed01"></stop>
-                <stop offset=".23" stopColor="#fde500"></stop>
-                <stop offset=".59" stopColor="#facf00"></stop>
-                <stop offset="1" stopColor="#f7af00"></stop>
-            </radialGradient>
-            <radialGradient id="logo-b" cx="25.23" cy="25.22" r="24.86" gradientUnits="userSpaceOnUse">
-                <stop offset="0" stopColor="#fac533"></stop>
-                <stop offset="1" stopColor="#f7931e"></stop>
-            </radialGradient>
-            <path fill="url(#logo-a)" d="M56.25 44.58c-.93-.53.87-5.28-1.78-6.78-1.79-1.01-3.44-1.31-4.61-1.36C51.89 34.95 51.56 31 54 31c2 0 2.9 1 5 1-1.05 0-3-5-6-5-1.36 0-2.38.13-3.13.29 1.55-2.13-.71-5.01 1.54-6.29 2.47-1.4 3.49.33 5.34-.72 2.74-1.55.19-5.88.19-5.88s.14 2.23-1.72 3.28c-.93.53-4.22-3.38-6.87-1.88-1.86 1.05-2.96 2.37-3.58 3.34.09-2.73-3.92-4.48-2.64-6.7 1-1.73 2.32-2.01 3.37-3.83-.53.91-5.83.1-7.33 2.7-.81 1.41-1.22 2.47-1.43 3.25C35.72 12.05 32 12.59 32 10c0-2.8 2-2.8 2-4.9C34 2 29 2 29 2s2 1 2 3.1c0 1.05-5 1.9-5 4.9 0 1.86.47 3.31.95 4.33-2.31-1.06-5.59 1.24-6.82-.88-1-1.73-.58-3.01-1.63-4.83.53.91-2.83 5.1-1.33 7.7.83 1.44 1.57 2.35 2.15 2.92-2.92-.67-4.36 3.11-6.73 1.77-2.47-1.4-1.45-3.13-3.3-4.18-2.74-1.55-5.28 2.78-5.28 2.78s1.9-1.23 3.75-.18c.93.53-.87 5.28 1.78 6.78 1.79 1.01 3.44 1.31 4.61 1.36-2.03 1.49-1.7 5.44-4.14 5.44-2 0-2.9-1-5-1 1.05 0 3 5 6 5 1.36 0 2.38-.13 3.13-.29-1.55 2.13.71 5.01-1.54 6.29-2.47 1.4-3.49-.33-5.34.72-2.74 1.55-.19 5.88-.19 5.88s-.14-2.23 1.72-3.28c-.93-.53 4.22 3.38 6.87 1.88 1.86-1.05 2.96-2.37 3.58-3.34-.09 2.73 3.92 4.48 2.64 6.7-1 1.73-2.32 2.01-3.37 3.83.53-.91 5.83-.1 7.33-2.7.81-1.41 1.22-2.47 1.43-3.25 1.02 2.51 4.74 1.97 4.74 4.56 0 2.8-2 2.8-2 4.9 0 3.1 5 3.1 5 3.1s-2-1-2-3.1c0-1.05 5-1.9 5-4.9 0-1.86-.47-3.31-.95-4.33 2.31 1.06 5.59-1.24 6.82.88 1 1.73.58 3.01 1.63 4.83-.53-.91 2.83-5.1 1.33-7.7-.83-1.44-1.57-2.35-2.15-2.92 2.92.67 4.36-3.11 6.73-1.77 2.47 1.4 1.45 3.13 3.3 4.18C57.46 48.73 60 44.4 60 44.4s-1.9 1.23-3.75.18z" opacity="1" data-original="url(#logo-a)" className=""></path>
-            <circle cx="32" cy="32" r="15" fill="url(#logo-b)" opacity="1" data-original="url(#logo-b)" className=""></circle>
-        </g>
-    </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" width="40" height="40" x="0" y="0" viewBox="0 0 64 64" style={{ enableBackground: 'new 0 0 512 512' }} xmlSpace="preserve" className="">
+    <g>
+      <radialGradient id="logo-a" cx="21.56" cy="21.67" r="28.61" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stopColor="#feed01"></stop>
+        <stop offset=".23" stopColor="#fde500"></stop>
+        <stop offset=".59" stopColor="#facf00"></stop>
+        <stop offset="1" stopColor="#f7af00"></stop>
+      </radialGradient>
+      <radialGradient id="logo-b" cx="25.23" cy="25.22" r="24.86" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stopColor="#fac533"></stop>
+        <stop offset="1" stopColor="#f7931e"></stop>
+      </radialGradient>
+      <path fill="url(#logo-a)" d="M56.25 44.58c-.93-.53.87-5.28-1.78-6.78-1.79-1.01-3.44-1.31-4.61-1.36C51.89 34.95 51.56 31 54 31c2 0 2.9 1 5 1-1.05 0-3-5-6-5-1.36 0-2.38.13-3.13.29 1.55-2.13-.71-5.01 1.54-6.29 2.47-1.4 3.49.33 5.34-.72 2.74-1.55.19-5.88.19-5.88s.14 2.23-1.72 3.28c-.93.53-4.22-3.38-6.87-1.88-1.86 1.05-2.96 2.37-3.58 3.34.09-2.73-3.92-4.48-2.64-6.7 1-1.73 2.32-2.01 3.37-3.83-.53.91-5.83.1-7.33 2.7-.81 1.41-1.22 2.47-1.43 3.25C35.72 12.05 32 12.59 32 10c0-2.8 2-2.8 2-4.9C34 2 29 2 29 2s2 1 2 3.1c0 1.05-5 1.9-5 4.9 0 1.86.47 3.31.95 4.33-2.31-1.06-5.59 1.24-6.82-.88-1-1.73-.58-3.01-1.63-4.83.53.91-2.83 5.1-1.33 7.7.83 1.44 1.57 2.35 2.15 2.92-2.92-.67-4.36 3.11-6.73 1.77-2.47-1.4-1.45-3.13-3.3-4.18-2.74-1.55-5.28 2.78-5.28 2.78s1.9-1.23 3.75-.18c.93.53-.87 5.28 1.78 6.78 1.79 1.01 3.44 1.31 4.61 1.36-2.03 1.49-1.7 5.44-4.14 5.44-2 0-2.9-1-5-1 1.05 0 3 5 6 5 1.36 0 2.38-.13 3.13-.29-1.55 2.13.71 5.01-1.54 6.29-2.47 1.4-3.49-.33-5.34.72-2.74 1.55-.19 5.88-.19 5.88s-.14-2.23 1.72-3.28c-.93-.53 4.22 3.38 6.87 1.88 1.86-1.05 2.96-2.37 3.58-3.34-.09 2.73 3.92 4.48 2.64 6.7-1 1.73-2.32 2.01-3.37 3.83.53-.91 5.83-.1 7.33-2.7.81-1.41 1.22-2.47 1.43-3.25 1.02 2.51 4.74 1.97 4.74 4.56 0 2.8-2 2.8-2 4.9 0 3.1 5 3.1 5 3.1s-2-1-2-3.1c0-1.05 5-1.9 5-4.9 0-1.86-.47-3.31-.95-4.33 2.31 1.06 5.59-1.24 6.82.88 1 1.73.58 3.01 1.63 4.83-.53-.91 2.83-5.1 1.33-7.7-.83-1.44-1.57-2.35-2.15-2.92 2.92.67 4.36-3.11 6.73-1.77 2.47 1.4 1.45 3.13 3.3 4.18C57.46 48.73 60 44.4 60 44.4s-1.9 1.23-3.75.18z" opacity="1" data-original="url(#logo-a)" className=""></path>
+      <circle cx="32" cy="32" r="15" fill="url(#logo-b)" opacity="1" data-original="url(#logo-b)" className=""></circle>
+    </g>
+  </svg>
 );
 
 const ScrollToTopIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-        <path d="M12 4l-8 8h6v8h4v-8h6l-8-8z"/>
-    </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+    <path d="M12 4l-8 8h6v8h4v-8h6l-8-8z" />
+  </svg>
 );
 
 
@@ -119,7 +119,7 @@ const renderContentWithHighlight = (text: string, highlight: string): React.Reac
   const highlightAndParse = (subtext: string, keyPrefix: string = ''): React.ReactNode[] => {
     // Split by markdown delimiters, but keep them
     const parts = subtext.split(/(\*\*.*?\*\*|\*.*?\*)/g).filter(Boolean);
-    
+
     return parts.map((part, i) => {
       const key = `${keyPrefix}-${i}`;
       if (part.startsWith('**') && part.endsWith('**')) {
@@ -170,13 +170,14 @@ const App: React.FC = () => {
   const [devotion, setDevotion] = useState<DevotionBlock[] | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  
+
   const [isSearchVisible, setIsSearchVisible] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [submittedQuery, setSubmittedQuery] = useState('');
   const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
   const [isSearching, setIsSearching] = useState(false);
   const [allDevotions, setAllDevotions] = useState<Record<string, DevotionBlock[]>>({});
+  const availableDates = manifest.map(item => parseDateFromInput(item.date)).sort((a, b) => a.getTime() - b.getTime());
   const [highlightQuery, setHighlightQuery] = useState<string>('');
   const [showScrollToTop, setShowScrollToTop] = useState(false);
   const [showMorningLightList, setShowMorningLightList] = useState(false);
@@ -225,7 +226,7 @@ const App: React.FC = () => {
       setIsLoading(true);
       setError(null);
       try {
-        const response = await fetch('https://res.cloudinary.com/devasudan/raw/upload/v1764103222/morning-light/manifest.json');
+        const response = await fetch('https://raw.githubusercontent.com/devasudanT/morning-light-devotions-data/main/data/manifest.json');
         if (!response.ok) throw new Error('Could not load devotion list.');
         const data: ManifestEntry[] = await response.json();
         setManifest(data);
@@ -282,10 +283,10 @@ const App: React.FC = () => {
       if (manifest.length === 0) return;
 
       const promises = manifest.flatMap(item => [
-        fetch(`https://res.cloudinary.com/devasudan/raw/upload/v1764103222/morning-light/${formatDateForFilename(parseDateFromInput(item.date))}-EN.json`)
+        fetch(`https://raw.githubusercontent.com/devasudanT/morning-light-devotions-data/main/data/${formatDateForFilename(parseDateFromInput(item.date))}-EN.json`)
           .then(res => res.ok ? res.json() : [])
           .then(data => ({ key: `${formatDateForFilename(parseDateFromInput(item.date))}-EN`, data })),
-        fetch(`https://res.cloudinary.com/devasudan/raw/upload/v1764103222/morning-light/${formatDateForFilename(parseDateFromInput(item.date))}-TA.json`)
+        fetch(`https://raw.githubusercontent.com/devasudanT/morning-light-devotions-data/main/data/${formatDateForFilename(parseDateFromInput(item.date))}-TA.json`)
           .then(res => res.ok ? res.json() : [])
           .then(data => ({ key: `${formatDateForFilename(parseDateFromInput(item.date))}-TA`, data }))
       ]);
@@ -322,7 +323,7 @@ const App: React.FC = () => {
 
     const filename = `${formatDateForFilename(date)}-${lang}.json`;
     try {
-      const response = await fetch(`https://res.cloudinary.com/devasudan/raw/upload/v1764103222/morning-light/${filename}`);
+      const response = await fetch(`https://raw.githubusercontent.com/devasudanT/morning-light-devotions-data/main/data/${filename}`);
       if (!response.ok) {
         throw new Error('Morning Light not available for this date.');
       }
@@ -340,7 +341,7 @@ const App: React.FC = () => {
       setIsLoading(false);
     }
   }, [allDevotions]);
-  
+
   // Fetch devotion content when in detail view
   useEffect(() => {
     if (view === 'detail') {
@@ -353,7 +354,7 @@ const App: React.FC = () => {
       searchInputRef.current?.focus();
     }
   }, [isSearchVisible]);
-  
+
   // Effect to scroll to and highlight search term
   useEffect(() => {
     if (view !== 'detail' || !highlightQuery || !devotion) {
@@ -362,37 +363,37 @@ const App: React.FC = () => {
 
     let targetBlockIndex = -1;
     for (let i = 0; i < devotion.length; i++) {
-        const block = devotion[i];
-        // Combine all string values in the block for searching
-        const blockText = Object.values(block).filter(v => typeof v === 'string').join(' ').toLowerCase();
-        if (blockText.includes(highlightQuery.toLowerCase())) {
-            targetBlockIndex = i;
-            break;
-        }
+      const block = devotion[i];
+      // Combine all string values in the block for searching
+      const blockText = Object.values(block).filter(v => typeof v === 'string').join(' ').toLowerCase();
+      if (blockText.includes(highlightQuery.toLowerCase())) {
+        targetBlockIndex = i;
+        break;
+      }
     }
 
     if (targetBlockIndex !== -1) {
-        const targetElement = document.querySelector(`[data-block-index="${targetBlockIndex}"]`);
-        if (targetElement) {
-            targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            
-            const fadeTimer = setTimeout(() => {
-                const highlights = document.querySelectorAll('.search-highlight-active');
-                highlights.forEach(h => h.classList.add('fade-out'));
-            }, 500);
+      const targetElement = document.querySelector(`[data-block-index="${targetBlockIndex}"]`);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
-            const clearTimer = setTimeout(() => {
-                setHighlightQuery('');
-            }, 3000);
+        const fadeTimer = setTimeout(() => {
+          const highlights = document.querySelectorAll('.search-highlight-active');
+          highlights.forEach(h => h.classList.add('fade-out'));
+        }, 500);
 
-            return () => {
-                clearTimeout(fadeTimer);
-                clearTimeout(clearTimer);
-            };
-        }
+        const clearTimer = setTimeout(() => {
+          setHighlightQuery('');
+        }, 3000);
+
+        return () => {
+          clearTimeout(fadeTimer);
+          clearTimeout(clearTimer);
+        };
+      }
     } else {
-        // If no match found, clear the query so this doesn't re-run
-        setHighlightQuery('');
+      // If no match found, clear the query so this doesn't re-run
+      setHighlightQuery('');
     }
   }, [view, highlightQuery, devotion]);
 
@@ -449,7 +450,7 @@ const App: React.FC = () => {
         allDevotions[`${formatDateForFilename(parseDateFromInput(manifestInfo.date))}-EN`],
         allDevotions[`${formatDateForFilename(parseDateFromInput(manifestInfo.date))}-TA`]
       ].filter(Boolean);
-      
+
       let matchFound = false;
       let snippet = '';
 
@@ -472,10 +473,10 @@ const App: React.FC = () => {
           }
         }
       }
-      
-      if(matchFound) {
-          results.push({ manifestInfo, snippet });
-          addedDates.add(manifestInfo.date);
+
+      if (matchFound) {
+        results.push({ manifestInfo, snippet });
+        addedDates.add(manifestInfo.date);
       }
     }
     setSearchResults(results);
@@ -490,25 +491,23 @@ const App: React.FC = () => {
     setView('search');
     setIsSearchVisible(false);
   };
-  
+
   const handleDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setCurrentDate(parseDateFromInput(e.target.value));
   };
-  
+
   const handlePrevDay = () => {
-    setCurrentDate(prev => {
-        const newDate = new Date(prev);
-        newDate.setDate(prev.getDate() - 1);
-        return newDate;
-    });
+    const currIndex = availableDates.findIndex(d => d.getTime() === currentDate.getTime());
+    if (currIndex > 0) {
+      setCurrentDate(availableDates[currIndex - 1]);
+    }
   };
-  
+
   const handleNextDay = () => {
-    setCurrentDate(prev => {
-        const newDate = new Date(prev);
-        newDate.setDate(prev.getDate() + 1);
-        return newDate;
-    });
+    const currIndex = availableDates.findIndex(d => d.getTime() === currentDate.getTime());
+    if (currIndex !== -1 && currIndex < availableDates.length - 1) {
+      setCurrentDate(availableDates[currIndex + 1]);
+    }
   };
 
   const handleThemeToggle = () => {
@@ -538,7 +537,7 @@ const App: React.FC = () => {
     setSearchResults([]);
     setHighlightQuery('');
   }
-  
+
   const handleCalendarClick = () => {
     setShowMorningLightList(true);
   };
@@ -586,13 +585,13 @@ const App: React.FC = () => {
       {isLoading && <div className="loading">Loading...</div>}
       {error && (
         <div className="error-container">
-            <NotAvailableIcon />
-            <div className="error">{error}</div>
+          <NotAvailableIcon />
+          <div className="error">{error}</div>
         </div>
       )}
       {!isLoading && !error && manifest.map(item => (
         <div key={item.date} className="devotion-list-item" onClick={() => handleSelectDevotion(item.date)} role="button" tabIndex={0}
-             onKeyPress={(e) => e.key === 'Enter' && handleSelectDevotion(item.date)}>
+          onKeyPress={(e) => e.key === 'Enter' && handleSelectDevotion(item.date)}>
           <h2>{item[language]?.title || item['EN'].title}</h2>
           <p>{new Date(item.date + 'T00:00:00').toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}</p>
         </div>
@@ -642,10 +641,10 @@ const App: React.FC = () => {
       <main className="content-area">
         {isLoading && <div className="loading">Loading...</div>}
         {error && (
-            <div className="error-container">
-                <NotAvailableIcon />
-                <div className="error">{error}</div>
-            </div>
+          <div className="error-container">
+            <NotAvailableIcon />
+            <div className="error">{error}</div>
+          </div>
         )}
         {devotion && (
           <>
@@ -673,7 +672,7 @@ const App: React.FC = () => {
                   return (
                     <div key={index} className="devotion-block" data-block-index={index}>
                       {(block.title || block.subtitle) && <h4>{renderContentWithHighlight(block.title || block.subtitle, highlightQuery)}</h4>}
-                      {(block.content || block.text)?.split('\n').map((p: string, i: number) => 
+                      {(block.content || block.text)?.split('\n').map((p: string, i: number) =>
                         p.trim() && <p key={i}>{renderContentWithHighlight(p, highlightQuery)}</p>
                       )}
                     </div>
@@ -691,16 +690,16 @@ const App: React.FC = () => {
   const renderSearchView = () => (
     <main className="search-results-list">
       <div className="search-results-header">
-          <h2>Results for "{submittedQuery}"</h2>
-          <p>{searchResults.length} {searchResults.length === 1 ? 'result' : 'results'} found</p>
+        <h2>Results for "{submittedQuery}"</h2>
+        <p>{searchResults.length} {searchResults.length === 1 ? 'result' : 'results'} found</p>
       </div>
 
       {isSearching && <div className="loading">Searching...</div>}
       {!isSearching && searchResults.length === 0 && <div className="no-results">No devotions found matching your search.</div>}
-      
+
       {!isSearching && searchResults.map(({ manifestInfo, snippet }) => (
         <div key={manifestInfo.date} className="devotion-list-item" onClick={() => handleSelectDevotion(manifestInfo.date, submittedQuery)} role="button" tabIndex={0}
-             onKeyPress={(e) => e.key === 'Enter' && handleSelectDevotion(manifestInfo.date, submittedQuery)}>
+          onKeyPress={(e) => e.key === 'Enter' && handleSelectDevotion(manifestInfo.date, submittedQuery)}>
           <h2>{getHighlightedText(manifestInfo[language]?.title || manifestInfo['EN'].title, submittedQuery)}</h2>
           <p className="search-snippet">{getHighlightedText(snippet, submittedQuery)}</p>
           <p className="search-result-date">{new Date(manifestInfo.date + 'T00:00:00').toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}</p>
@@ -723,7 +722,7 @@ const App: React.FC = () => {
           {/* This div is a spacer to keep the title centered */}
         </div>
       </header>
-        
+
       <input
         ref={dateInputRef}
         type="date"
