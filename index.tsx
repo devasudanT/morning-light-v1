@@ -154,6 +154,8 @@ const renderContentWithHighlight = (text: string, highlight: string): React.Reac
 };
 
 
+const DISABLE_NAVIGATION = true; // Temporarily disable next/prev buttons
+
 const App: React.FC = () => {
   const [view, setView] = useState<View>('list');
   const [currentDate, setCurrentDate] = useState(new Date());
@@ -603,11 +605,13 @@ const App: React.FC = () => {
     <>
       <div className="controls">
         <div className="bottom-nav-island">
-          <button onClick={handlePrevDay} aria-label="Previous Day">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-              <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
-            </svg>
-          </button>
+          {!DISABLE_NAVIGATION && (
+            <button onClick={handlePrevDay} aria-label="Previous Day">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+              </svg>
+            </button>
+          )}
           <button onClick={handleGoBackToList} className="icon-btn sub-header-home-btn" aria-label="Go to Home">
             <HomeIcon />
           </button>
@@ -631,11 +635,13 @@ const App: React.FC = () => {
               </svg>
             </a>
           )}
-          <button onClick={handleNextDay} aria-label="Next Day">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-              <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
-            </svg>
-          </button>
+          {!DISABLE_NAVIGATION && (
+            <button onClick={handleNextDay} aria-label="Next Day">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+              </svg>
+            </button>
+          )}
         </div>
       </div>
       <main className="content-area">
