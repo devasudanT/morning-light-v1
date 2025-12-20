@@ -19,6 +19,7 @@ interface MetaBlock extends DevotionBlock {
   youtubeUrl?: string;
   pdfUrl?: string;
   imageUrl?: string;
+  audioUrl?: string;
 }
 
 interface ManifestEntry {
@@ -105,6 +106,18 @@ const LogoIcon = () => (
 const ScrollToTopIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
     <path d="M12 4l-8 8h6v8h4v-8h6l-8-8z" />
+  </svg>
+);
+
+const PlayIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+    <path d="M8 5v14l11-7z" />
+  </svg>
+);
+
+const PauseIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+    <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
   </svg>
 );
 
@@ -221,6 +234,14 @@ const App: React.FC = () => {
 
   const dateInputRef = useRef<HTMLInputElement>(null);
   const searchInputRef = useRef<HTMLInputElement>(null);
+
+  // Audio state management
+  // Uses useRef to manage a single global audio instance ensuring only one audio can play at a time
+  // Audio state is managed through isPlaying and currentAudioUrl states
+  // The audioUrl comes from the meta block in devotion JSON data and controls playback
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [currentAudioUrl, setCurrentAudioUrl] = useState<string | null>(null);
 
   // Fetch manifest on initial load
   useEffect(() => {
@@ -582,6 +603,69 @@ const App: React.FC = () => {
 
   const meta = devotion?.find(block => block.type === 'meta') as MetaBlock | undefined;
 
+  // Audio control functions
+  const handleAudioToggle = useCallback(() => {
+    const audioUrl = meta?.audioUrl;
+    if (!audioUrl) return;
+
+    if (isPlaying && currentAudioUrl === audioUrl) {
+      // Pause current audio
+      audioRef.current?.pause();
+      setIsPlaying(false);
+    } else {
+      // Stop any existing audio and play new audio
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current.src = '';
+      }
+
+      // For Vercel optimization: Check if audio instance exists and has different URL
+      if (!audioRef.current || audioRef.current.src !== audioUrl) {
+        const audio = new Audio(audioUrl);
+        // Critical for Vercel: preload metadata and warm up the stream
+        audio.preload = 'metadata';
+        audioRef.current = audio;
+      }
+
+      // Critical for instant playback: load() ensures audio is ready before play()
+      audioRef.current.load();
+
+      // Critical for instant playback: wait for canplay event to start playback
+      // This prevents silent delays on slow networks
+      const handleCanPlay = () => {
+        audioRef.current?.play().then(() => {
+          setIsPlaying(true);
+          setCurrentAudioUrl(audioUrl);
+        }).catch((error) => {
+          console.error('Audio playback failed:', error);
+          setIsPlaying(false);
+          setCurrentAudioUrl(null);
+        });
+        // Remove listener after successful playback start
+        audioRef.current?.removeEventListener('canplay', handleCanPlay);
+      };
+
+      audioRef.current?.addEventListener('canplay', handleCanPlay);
+      audioRef.current?.addEventListener('ended', () => {
+        setIsPlaying(false);
+        setCurrentAudioUrl(null);
+      });
+
+      // Add playsInline for mobile compatibility
+      audioRef.current.playsInline = true;
+    }
+  }, [isPlaying, currentAudioUrl, meta?.audioUrl]);
+
+  // Cleanup audio on component unmount or when view/content changes
+  useEffect(() => {
+    return () => {
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current.src = '';
+      }
+    };
+  }, [view, currentDate, language]);
+
   const renderListView = () => (
     <main className="devotion-list">
       {isLoading && <div className="loading">Loading...</div>}
@@ -634,6 +718,15 @@ const App: React.FC = () => {
                 <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" />
               </svg>
             </a>
+          )}
+          {meta?.audioUrl && meta.audioUrl !== '#' && meta.audioUrl !== '' && (
+            <button
+              className="icon-btn"
+              aria-label="Play Audio"
+              onClick={handleAudioToggle}
+            >
+              {isPlaying && currentAudioUrl === meta.audioUrl ? <PauseIcon /> : <PlayIcon />}
+            </button>
           )}
           {!DISABLE_NAVIGATION && (
             <button onClick={handleNextDay} aria-label="Next Day">
