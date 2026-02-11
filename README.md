@@ -20,15 +20,3 @@ Morning Light is a serene and user-friendly web application designed to provide 
     *   Informative messages with a "Not Available" icon for dates where content is not available.
 *   **Rich Content Formatting**: Devotional text correctly displays markdown formatting like **bold** and *italics*. Biblical verses are presented in a distinct, elegant style with the Georgia font and a mild background to stand out.
 *   **External Resources**: Quick links to supplementary materials like YouTube videos or PDF documents related to the devotion.
-
-## Social Preview Endpoint
-
-For crawler-perfect link previews (platforms that do not execute client JavaScript), use:
-
-`/preview/<dd-mm-yyyy-LANG>`
-
-Example:
-
-`/preview/11-02-2026-EN`
-
-This endpoint renders server-side Open Graph and Twitter metadata from the devotion JSON, then redirects users to the actual app route (`/<dd-mm-yyyy-LANG>`).

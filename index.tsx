@@ -44,29 +44,6 @@ const formatDateForInput = (date: Date): string => {
   return date.toISOString().split('T')[0];
 };
 
-const DEFAULT_OG_TITLE = 'Morning Light';
-const DEFAULT_OG_DESCRIPTION = 'Daily devotion from Morning Light.';
-const DEFAULT_OG_IMAGE = '';
-
-const toAbsoluteUrl = (url: string | undefined): string => {
-  if (!url) return '';
-  try {
-    return new URL(url, window.location.origin).href;
-  } catch {
-    return '';
-  }
-};
-
-const upsertMetaTag = (attr: 'property' | 'name', key: string, content: string) => {
-  let tag = document.head.querySelector(`meta[${attr}="${key}"]`) as HTMLMetaElement | null;
-  if (!tag) {
-    tag = document.createElement('meta');
-    tag.setAttribute(attr, key);
-    document.head.appendChild(tag);
-  }
-  tag.setAttribute('content', content);
-};
-
 const parseDateFromInput = (dateStr: string): Date => {
   return new Date(dateStr + 'T00:00:00');
 };
@@ -394,26 +371,6 @@ const App: React.FC = () => {
       fetchDevotion(currentDate, language);
     }
   }, [currentDate, language, fetchDevotion, view]);
-
-  // Keep social preview metadata in sync with the currently opened devotion.
-  useEffect(() => {
-    const metaBlock = devotion?.find(block => block.type === 'meta') as MetaBlock | undefined;
-    const isDetailView = view === 'detail' && !!metaBlock;
-
-    const ogTitle = isDetailView && metaBlock.title ? metaBlock.title : DEFAULT_OG_TITLE;
-    const ogImage = isDetailView ? toAbsoluteUrl(metaBlock.imageUrl) : DEFAULT_OG_IMAGE;
-    const ogDescription = isDetailView && metaBlock.subtitle ? metaBlock.subtitle : DEFAULT_OG_DESCRIPTION;
-    const canonicalUrl = window.location.href;
-
-    document.title = isDetailView && metaBlock.title ? `${metaBlock.title} | Morning Light` : DEFAULT_OG_TITLE;
-    upsertMetaTag('property', 'og:title', ogTitle);
-    upsertMetaTag('property', 'og:image', ogImage);
-    upsertMetaTag('property', 'og:description', ogDescription);
-    upsertMetaTag('property', 'og:url', canonicalUrl);
-    upsertMetaTag('name', 'twitter:title', ogTitle);
-    upsertMetaTag('name', 'twitter:image', ogImage);
-    upsertMetaTag('name', 'twitter:description', ogDescription);
-  }, [view, devotion]);
 
   useEffect(() => {
     if (isSearchVisible) {
